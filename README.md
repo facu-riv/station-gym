@@ -30,7 +30,7 @@ El sistema permite:
 
 ## DER
 El siguiente diagrama muestra la relación 1–N entre las entidades principales:
-![Diagrama Entidad-Relación](der.jpg)
+![Diagrama Entidad-Relación](der.png)
 
 ## Modelo de datos (resumen)
 - **tipos**: `id`, `nombre`
