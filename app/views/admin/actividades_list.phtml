@@ -1,0 +1,14 @@
+<h2>Actividades - ABM</h2>
+<a class="btn" href="<?= BASE_URL ?>?action=admin&op=create&subject=actividad">Crear nueva actividad</a>
+<table style="width:100%;margin-top:12px;">
+<thead><tr><th>Id</th><th>Nombre</th><th>Tipo</th><th>Acciones</th></tr></thead>
+<tbody>
+<?php foreach($actividades as $a): ?>
+<tr><td><?= $a['id'] ?></td><td><?= htmlspecialchars($a['nombre']) ?></td><td><?= htmlspecialchars($a['tipo']) ?></td>
+<td>
+  <a class="btn" href="<?= BASE_URL ?>?action=admin&op=edit&subject=actividad&id=<?= $a['id'] ?>">Editar</a>
+  <a class="btn secondary" href="<?= BASE_URL ?>?action=admin&op=delete&subject=actividad&id=<?= $a['id'] ?>" onclick="return confirm('Eliminar?')">Eliminar</a>
+</td></tr>
+<?php endforeach; ?>
+</tbody>
+</table>

@@ -1,0 +1,5 @@
+<h2><?= htmlspecialchars($actividad['nombre']) ?></h2>
+<p><strong>Tipo:</strong> <?= htmlspecialchars($actividad['tipo'] ?? 'Sin tipo') ?></p>
+<?php if(!empty($actividad['imagen'])): ?><img src="<?= htmlspecialchars($actividad['imagen']) ?>" style="max-width:320px" alt=""><?php endif; ?>
+<p><?= nl2br(htmlspecialchars($actividad['descripcion'])) ?></p>
+<a class="btn secondary" href="<?= BASE_URL ?>">Volver</a>

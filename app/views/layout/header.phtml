@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Station Gym</title>
+  <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css">
+</head>
+<body>
+<header>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+    <div class="brand">Station Gym</div>
+    <nav>
+      <a href="<?= BASE_URL ?>">Inicio</a>
+      <a href="<?= BASE_URL ?>?action=actividades">Actividades</a>
+      <a href="<?= BASE_URL ?>?action=tipos">Tipos</a>
+      <?php if(!empty($_SESSION['user'])): ?>
+        <a href="<?= BASE_URL ?>?action=admin">Admin</a>
+        <a href="<?= BASE_URL ?>?action=logout">Logout (<?=htmlspecialchars($_SESSION['user']['username'])?>)</a>
+      <?php else: ?>
+        <a href="<?= BASE_URL ?>?action=login">Login</a>
+      <?php endif; ?>
+    </nav>
+  </div>
+</header>
+<div class="container">

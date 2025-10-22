@@ -1,0 +1,7 @@
+<h1>Login administrador</h1>
+<?php if(!empty($error)): ?><div style="color:red"><?= htmlspecialchars($error) ?></div><?php endif; ?>
+<form method="post" style="max-width:360px;">
+  <input class="form-control" name="username" placeholder="Usuario" required>
+  <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
+  <button class="btn" type="submit">Ingresar</button>
+</form>

@@ -1,0 +1,18 @@
+<h2><?= isset($actividad) ? 'Editar' : 'Crear' ?> Actividad</h2>
+<form method="post" style="max-width:640px;">
+  <label>Nombre</label>
+  <input class="form-control" name="nombre" value="<?= htmlspecialchars($actividad['nombre'] ?? '') ?>" required>
+  <label>Descripción</label>
+  <textarea class="form-control" name="descripcion"><?= htmlspecialchars($actividad['descripcion'] ?? '') ?></textarea>
+  <label>Tipo</label>
+  <select class="form-control" name="tipo_id">
+    <option value="">-- Sin tipo --</option>
+    <?php foreach($tipos as $t): ?>
+      <option value="<?= $t['id'] ?>" <?= isset($actividad) && $actividad['tipo_id']==$t['id'] ? 'selected' : '' ?>><?= htmlspecialchars($t['nombre']) ?></option>
+    <?php endforeach; ?>
+  </select>
+  <label>Imagen (ruta o URL)</label>
+  <input class="form-control" name="imagen" value="<?= htmlspecialchars($actividad['imagen'] ?? '') ?>">
+  <button class="btn" type="submit"><?= isset($actividad) ? 'Guardar' : 'Crear' ?></button>
+  <a class="btn secondary" href="<?= BASE_URL ?>?action=admin&op=list&subject=actividades">Cancelar</a>
+</form>

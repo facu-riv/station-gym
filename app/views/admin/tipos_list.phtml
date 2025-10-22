@@ -1,0 +1,14 @@
+<h2>Tipos - ABM</h2>
+<a class="btn" href="<?= BASE_URL ?>?action=admin&op=create&subject=tipo">Crear nuevo tipo</a>
+<table style="width:100%;margin-top:12px;">
+<thead><tr><th>Id</th><th>Nombre</th><th>Acciones</th></tr></thead>
+<tbody>
+<?php foreach($tipos as $t): ?>
+<tr><td><?= $t['id'] ?></td><td><?= htmlspecialchars($t['nombre']) ?></td>
+<td>
+  <a class="btn" href="<?= BASE_URL ?>?action=admin&op=edit&subject=tipo&id=<?= $t['id'] ?>">Editar</a>
+  <a class="btn secondary" href="<?= BASE_URL ?>?action=admin&op=delete&subject=tipo&id=<?= $t['id'] ?>" onclick="return confirm('Eliminar?')">Eliminar</a>
+</td></tr>
+<?php endforeach; ?>
+</tbody>
+</table>

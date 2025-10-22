@@ -1,18 +1,10 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'db_station_gym');
+// config.php
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'station_gym_db');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-
-function getConnection() {
-    try {
-        $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USER, DB_PASS);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $db;
-    } catch (PDOException $e) {
-        die("Error de conexión: " . $e->getMessage());
-    }
-}
-
-session_start();
+define('BASE_URL', 'http://localhost/station-gym/public/');  // ← URL COMPLETA
+define('UPLOAD_DIR', __DIR__ . '/public/img/');
+define('UPLOAD_URL', BASE_URL . 'img/');
 ?>

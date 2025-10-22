@@ -1,0 +1,7 @@
+<h2><?= isset($tipo) ? 'Editar' : 'Crear' ?> Tipo</h2>
+<form method="post" style="max-width:480px;">
+  <label>Nombre</label>
+  <input class="form-control" name="nombre" value="<?= htmlspecialchars($tipo['nombre'] ?? '') ?>" required>
+  <button class="btn" type="submit"><?= isset($tipo) ? 'Guardar' : 'Crear' ?></button>
+  <a class="btn secondary" href="<?= BASE_URL ?>?action=admin&op=list&subject=tipos">Cancelar</a>
+</form>

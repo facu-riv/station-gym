@@ -1,0 +1,6 @@
+<h1>Tipos de Actividad</h1>
+<ul>
+<?php foreach($tipos as $t): ?>
+  <li><a href="<?= BASE_URL ?>?action=tipo&id=<?= $t['id'] ?>"><?= htmlspecialchars($t['nombre']) ?></a></li>
+<?php endforeach; ?>
+</ul>

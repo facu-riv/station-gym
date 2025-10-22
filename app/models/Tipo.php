@@ -1,0 +1,1 @@
+<?php class Tipo { public $id; public $nombre; } ?>

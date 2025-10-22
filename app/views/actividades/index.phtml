@@ -1,0 +1,11 @@
+<h1>Actividades</h1>
+<div class="grid">
+<?php foreach($actividades as $a): ?>
+  <div class="card">
+    <img src="<?= htmlspecialchars($a['imagen'] ?: (BASE_URL . 'img/default.png')) ?>" alt="">
+    <h3><?= htmlspecialchars($a['nombre']) ?></h3>
+    <p class="muted"><?= htmlspecialchars($a['tipo'] ?: 'Sin tipo') ?></p>
+    <a class="btn" href="<?= BASE_URL ?>?action=actividades&id=<?= $a['id'] ?>">Ver</a>
+  </div>
+<?php endforeach; ?>
+</div>
